@@ -9,7 +9,7 @@ Currently contains code snippets for:
 4. JSON Entity validation
 5. Log incoming HTTP Requests
 
-Those code snippets has been tested with Play 2.3.x
+Those code snippets has been tested with Play 2.3.x and Java 8
 
 <h3>Write file to fileSystem</h3>
 
@@ -47,7 +47,8 @@ in play controller:
 <h3>Send Email</h3>
 
 add the following dependency: libraryDependencies += "com.sun.mail" % "javax.mail" % "1.5.2"
-in application.conf file: 
+
+in application.conf file add: 
 
 EMAIL_FROM=myemail@gmail.com
 
