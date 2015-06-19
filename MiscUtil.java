@@ -39,7 +39,7 @@ public class MiscUtil {
         return Optional.ofNullable(Play.application().configuration().getString(key));
     }
 
-    public static void writeFileToFileSystem(String fileName, byte[] imageInByteArray) throws IOException {
+    public static void writeImageToFileSystem(String fileName, byte[] imageInByteArray) throws IOException {
         BufferedImage originalImage = ImageIO.read(new ByteArrayInputStream(imageInByteArray));
 
         BufferedImage resizedImage = Scalr.resize(originalImage, Scalr.Method.SPEED,

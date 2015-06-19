@@ -11,7 +11,7 @@ Currently contains code snippets for:
 
 Those code snippets has been tested with Play 2.3.x and Java 8
 
-<h3>Write file to fileSystem</h3>
+<h3>Write image to fileSystem</h3>
 
 in application.conf file:
 
@@ -21,7 +21,7 @@ IMG_WIDTH=640
 
 IMG_HEIGHT=480
 
-    public static void writeFileToFileSystem(String fileName, byte[] imageInByteArray) throws IOException {
+    public static void writeImageToFileSystem(String fileName, byte[] imageInByteArray) throws IOException {
         BufferedImage originalImage = ImageIO.read(new ByteArrayInputStream(imageInByteArray));
 
         BufferedImage resizedImage = Scalr.resize(originalImage, Scalr.Method.SPEED,
@@ -40,7 +40,7 @@ in play controller:
 
     if (part != null) {
         File file = part.getFile();
-        MiscUtil.writeFileToFileSystem(newImageFileName, Files.toByteArray(file));
+        MiscUtil.writeImageToFileSystem(newImageFileName, Files.toByteArray(file));
     }
 
 ------------------------------------------------
