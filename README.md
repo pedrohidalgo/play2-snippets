@@ -5,13 +5,7 @@ Currently contains utility codes for:
 
 1. Write image to file system
 2. Send Email
-3. Get play conf value
-4. JSON Entity validation
-5. Log incoming HTTP Requests
-6. DateUtil class
-7. PlayUtil class
-
-Those code snippets has been tested with Play 2.3.x and Java 8
+3. PlayUtil class
 
 <h3>Write image to fileSystem</h3>
 
@@ -97,19 +91,3 @@ EMAIL_PASSWORD=mypassword
 Usage:
 
     MiscUtil.sendEmail(to, subject, body);
-
----------------------------------------------------------------
-<h3>Get configuration Value</h3>
-
-    public static Optional<String> optConfValue(String key) {
-        return Optional.ofNullable(Play.application().configuration().getString(key));
-    }
-
-Usage:
-    
-    Optional<String> myValueOptional = MiscUtil.optConfValue("my_key");
-
-    if(myValueOptional.isPresent()){
-        String myKey = myValueOptional.get();
-    }
-

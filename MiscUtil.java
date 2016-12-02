@@ -4,7 +4,6 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
-import java.util.Optional;
 import java.util.Properties;
 import javax.imageio.ImageIO;
 import javax.mail.Message;
@@ -16,7 +15,6 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import org.imgscalr.Scalr;
 import play.Logger;
-import play.Play;
 
 /**
  *
@@ -24,20 +22,12 @@ import play.Play;
  */
 public abstract class MiscUtil {
 
-    public static final int IMG_WIDTH = Integer.parseInt(getConfValue("images_width"));
-    public static final int IMG_HEIGHT = Integer.parseInt(getConfValue("images_height"));
-    public static final String IMAGES_DIR = getConfValue("images_dir");
-    public static final String EMAIL_FROM = getConfValue("email_from");
-    public static final String EMAIL_PASSWORD = getConfValue("email_password");
-    public static final String SEPARATOR = getConfValue("separator");
-
-    public static String getConfValue(String key) {
-        return Play.application().configuration().getString(key);
-    }
-
-    public static Optional<String> optConfValue(String key) {
-        return Optional.ofNullable(Play.application().configuration().getString(key));
-    }
+    public static final int IMG_WIDTH = Integer.parseInt(PlayUtil.getConfValue("images_width").get());
+    public static final int IMG_HEIGHT = Integer.parseInt(PlayUtil.getConfValue("images_height").get());
+    public static final String IMAGES_DIR = PlayUtil.getConfValue("images_dir").get();
+    public static final String EMAIL_FROM = PlayUtil.getConfValue("email_from").get();
+    public static final String EMAIL_PASSWORD = PlayUtil.getConfValue("email_password").get();
+    public static final String SEPARATOR = PlayUtil.getConfValue("separator").get();
 
     public static void writeImageToFileSystem(String fileName, byte[] imageInByteArray) throws IOException {
         BufferedImage originalImage = ImageIO.read(new ByteArrayInputStream(imageInByteArray));
