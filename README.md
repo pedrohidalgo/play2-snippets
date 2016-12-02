@@ -1,13 +1,15 @@
-Usefull play 2 code snippets
+Usefull play 2 utility codes
 ============================================
 
-Currently contains code snippets for:
+Currently contains utility codes for:
 
-1. Write file to file system
+1. Write image to file system
 2. Send Email
 3. Get play conf value
 4. JSON Entity validation
 5. Log incoming HTTP Requests
+6. DateUtil class
+7. PlayUtil class
 
 Those code snippets has been tested with Play 2.3.x and Java 8
 

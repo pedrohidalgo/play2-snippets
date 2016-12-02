@@ -22,7 +22,7 @@ import play.Play;
  *
  * @author pedro
  */
-public class MiscUtil {
+public abstract class MiscUtil {
 
     public static final int IMG_WIDTH = Integer.parseInt(getConfValue("images_width"));
     public static final int IMG_HEIGHT = Integer.parseInt(getConfValue("images_height"));

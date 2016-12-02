@@ -13,7 +13,7 @@ import play.Logger;
  *
  * @author pedro
  */
-public class DateUtil {
+public abstract class DateUtil {
 
     public static final String FORMAT_DATE_PATTERN = "yyyyMMddHHmmss";
     public static final String FORMAT_TIME_PATTERN = "hh:mm a";
